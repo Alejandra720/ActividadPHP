@@ -1,0 +1,35 @@
+<?php
+function dibujarPiramideMejorada($niveles, $simbolo = '*', $espaciador = ' ') {
+    // 1. Validación de entrada
+    if ($niveles < 1) {
+        echo "El número de niveles debe ser positivo.";
+        return;
+    }
+
+    // 2. Calcular el ancho total de la pirámide
+    $anchoTotal = 2 * $niveles - 1;
+    
+    // 3. Bucle principal para cada nivel
+    for ($i = 1; $i <= $niveles; $i++) {
+        // 4. Calculamos los elementos de este nivel
+        $numSimbolos = 2 * $i - 1;
+        $numEspacios = ($anchoTotal - $numSimbolos) / 2;
+        
+        // 5. Imprimimos los espacios iniciales
+        echo str_repeat($espaciador, $numEspacios);
+        
+        // 6. Imprimimos los símbolos
+        echo str_repeat($simbolo, $numSimbolos);
+        
+        // 7. Salto de línea
+        echo "\n";
+    }
+}
+
+// Ejemplos de uso
+echo "Pirámide básica de 5 niveles:\n";
+dibujarPiramideMejorada(5);
+
+echo "\nPirámide con símbolos diferentes:\n";
+dibujarPiramideMejorada(5, '#', '.');
+?>

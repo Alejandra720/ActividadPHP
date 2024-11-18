@@ -1,0 +1,18 @@
+<?php
+// 1. Definimos el array de números
+$numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// 2. Inicializamos la variable que almacenará la suma
+$suma = 0;
+
+// 3. Recorremos el array y sumamos los números pares
+foreach ($numeros as $numero) {
+    // 4. Verificamos si el número es par usando el operador módulo (%)
+    if ($numero % 2 == 0) {
+        $suma += $numero; // 5. Si es par, lo sumamos
+    }
+}
+
+// 6. Mostramos el resultado
+echo "La suma de los números pares es: " . $suma;
+?>
